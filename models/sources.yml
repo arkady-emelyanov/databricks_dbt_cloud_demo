@@ -1,6 +1,6 @@
 version: 2
 sources:
   - name: progresso_production
-    schema: ref_dev_mysql_progresso_production
+    schema: ref_{{ env_var('DBT_ENV_NAME') }}_mysql_progresso_production
     tables:
       - name: addresses
