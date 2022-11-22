@@ -1,4 +1,4 @@
-{{config(materialized="table")}}
+{{config(materialized="table",tags=["sample"])}}
 
 select
     client_id,
