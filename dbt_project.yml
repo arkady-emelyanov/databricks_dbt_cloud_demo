@@ -39,10 +39,5 @@ models:
   incremental_strategy: merge
 
   databricks_demo:
-    #
-    # all models will be materialized in the following schema:
-    #   hive_metastore
-    #     .agg_dev_dbtcloud_<project>
-    # 
-    database: hive_metastore
+    database: "{{env_var('DBT_CATALOG_NAME')}}"
     schema: "{{env_var('DBT_PROJECT_NAME')}}"
