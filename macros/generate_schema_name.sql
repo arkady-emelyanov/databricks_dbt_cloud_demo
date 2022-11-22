@@ -1,6 +1,11 @@
 {% macro generate_schema_name(custom_schema_name, node) -%}
-    {%- set default_schema = target.schema -%}
+    {#
 
+         For details of what is happening here, please see official documentation:
+         https://docs.getdbt.com/docs/build/custom-schemas#what-is-a-custom-schema
+
+    #}
+    {%- set default_schema = target.schema -%}
     {%- if custom_schema_name is none -%}
         {#
             custom schema name wasn't specified
