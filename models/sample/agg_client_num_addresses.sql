@@ -1,20 +1,16 @@
-{{
-    config(
-        materialized="table",
-        schema="default"
-    )
-}}
+{{config(materialized="table")}}
+
 select
     client_id,
     postal_code,
     count(*) as number_of_addresses
 
 from
-    {{ ref('ref_progresso_production_addresses') }}
+    {{ source('progresso_production', 'addresses') }}
 
 group by
     client_id,
     postal_code
 
 having
-    number_of_addresses > 1
+    number_of_addresses > 1;

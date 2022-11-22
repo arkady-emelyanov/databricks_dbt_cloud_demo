@@ -1,6 +1,6 @@
 version: 2
 sources:
-  - name: ref_progresso_production_addresses
+  - name: progresso_production
     schema: ref_dev_mysql_progresso_production
     tables:
       - name: addresses
