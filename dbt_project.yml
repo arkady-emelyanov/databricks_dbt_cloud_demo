@@ -39,4 +39,4 @@ models:
   incremental_strategy: merge
 
   databricks_demo:
-    database: default
+    database: hive_metastore

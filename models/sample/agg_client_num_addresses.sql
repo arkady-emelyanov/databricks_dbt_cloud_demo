@@ -1,6 +1,7 @@
 {{
     config(
-        materialized="table"
+        materialized="table",
+        schema="default"
     )
 }}
 select
@@ -9,7 +10,7 @@ select
     count(*) as number_of_addresses
 
 from
-    hive_metastore.ref_dev_mysql_progresso_production.addresses
+    {{ ref('ref_progresso_production_addresses') }}
 
 group by
     client_id,
