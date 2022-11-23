@@ -1,4 +1,9 @@
-{{config(materialized="table",tags=["demo"])}}
+{{
+    config(
+        materialized="table",
+        tags=["demo"]
+    )
+}}
 
 with cte_do_not_call (client_id, do_not_call_loans_count)
 as (
