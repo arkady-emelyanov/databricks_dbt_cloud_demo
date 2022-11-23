@@ -1,6 +1,10 @@
 version: 2
 sources:
   - name: progresso_production
+    # if source table referenced from the other catalog
+    # it can be overriden here.
+    #database: my_unity_catalog
     schema: ref_{{ env_var('DBT_ENV_NAME') }}_mysql_progresso_production
     tables:
       - name: addresses
+      - name: loans
