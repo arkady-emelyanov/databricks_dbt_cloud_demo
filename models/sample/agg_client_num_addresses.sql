@@ -1,4 +1,9 @@
-{{config(materialized="table",tags=["sample"])}}
+{{
+    config(
+        materialized="table",
+        tags=["demo"]
+    )
+}}
 
 select
     client_id,
